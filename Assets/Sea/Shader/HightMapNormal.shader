@@ -149,6 +149,7 @@
                 float spec = pow(max(0, dot(viewDir, refDir)), _Shininess);//反射光
                 col += spec + unity_AmbientSky + tex2D(_EmissionMap, i.uv) * _EmissionColor;
                 
+                //デプス
                 float4 depthSample = SAMPLE_DEPTH_TEXTURE_PROJ(_CameraDepthTexture, i.screenPos);
                 float depth = LinearEyeDepth(depthSample).r;
 
